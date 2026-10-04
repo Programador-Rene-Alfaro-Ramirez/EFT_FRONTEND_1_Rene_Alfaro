@@ -6,17 +6,18 @@ export const Cart = ({ carrito, totalItems, totalPrecio, onAumentar, onDisminuir
     <aside className="col-lg-4 mt-5 mt-lg-0" aria-label="Carrito de compras">
       <div className="card shadow-sm border-0 sticky-top" style={{ top: '20px' }}>
         
-        {/* Cabecera del carrito con tu color azul corporativo */}
+        {/* Cabecera del carrito */}
         <div className="card-header header-carrito text-center py-3">
           <h3 className="h5 mb-0 fw-bold">Carrito de Compras</h3>
         </div>
 
         <div className="card-body">
-          {/* Renderizado condicional: ¿El carrito está vacío? */}
+          {/* Criterio 3: Renderizado condicional para mostrar mensaje si el carrito está vacío */}
           {carrito.length === 0 ? (
             <ul className="list-group list-group-flush mb-3">
               <li className="list-group-item text-center text-muted py-4">
-                El carrito está vacío
+                <p className="mb-1 fw-bold">El carrito está vacío</p>
+                <small>Agrega algunos videojuegos para comenzar.</small>
               </li>
             </ul>
           ) : (
@@ -65,16 +66,16 @@ export const Cart = ({ carrito, totalItems, totalPrecio, onAumentar, onDisminuir
                     {formatearMoneda(totalPrecio)}
                   </span>
                 </div>
-                
-                {/* Botones de acción final */}
-                <div className="d-grid gap-2">
-                  <button className="btn btn-polystation-cyan text-white fw-bold py-2" onClick={() => alert('¡Compra procesada con éxito!')}>
-                    Finalizar Compra
-                  </button>
-                  <button className="btn btn-outline-secondary btn-sm" onClick={onVaciar}>
-                    Vaciar Carrito
-                  </button>
-                </div>
+              </div>
+
+              {/* Botones de accion final */}
+              <div className="d-grid gap-2">
+                <button className="btn btn-polystation-cyan text-white fw-bold py-2" onClick={() => alert('Compra procesada con exito')}>
+                  Finalizar Compra
+                </button>
+                <button className="btn btn-outline-secondary btn-sm" onClick={onVaciar}>
+                  Vaciar Carrito
+                </button>
               </div>
             </>
           )}

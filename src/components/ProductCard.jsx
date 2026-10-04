@@ -1,7 +1,8 @@
 import React from 'react';
 import { formatearMoneda } from '../data/products';
 
-export const ProductCard = ({ producto, onAgregar }) => {
+// Recibimos isInCart como prop
+export const ProductCard = ({ producto, onAgregar, isInCart }) => {
   // Extraemos las propiedades del producto
   const { nombre, precioNormal, precioOferta, enOferta, descripcion, imagen } = producto;
 
@@ -16,13 +17,13 @@ export const ProductCard = ({ producto, onAgregar }) => {
           </span>
         )}
 
-        <img 
-          src={imagen} 
-          className="card-img-top p-3" 
-          alt={nombre} 
-          style={{ height: '210px', objectFit: 'contain', background: '#fff' }} 
+        <img
+          src={imagen}
+          className="card-img-top p-3"
+          alt={nombre}
+          style={{ height: '210px', objectFit: 'contain', background: '#fff' }}
         />
-        
+
         <div className="card-body d-flex flex-column text-center">
           <h3 className="card-title h6 fw-bold mb-2 text-dark">{nombre}</h3>
           <p className="card-text text-muted small flex-grow-1">{descripcion}</p>
@@ -37,13 +38,14 @@ export const ProductCard = ({ producto, onAgregar }) => {
             <span className="d-block fs-5 fw-bold mb-3" style={{ color: 'var(--ps-cyan)' }}>
               {enOferta ? formatearMoneda(precioOferta) : formatearMoneda(precioNormal)}
             </span>
-            
-            {/* Evento onClick para agregar al carrito (Exigencia de la pauta) */}
-            <button 
-              className="btn btn-polystation-cyan w-100 fw-semibold" 
+
+            {/* Criterio 3 (Renderizado Condicional): Cambiar estilos y texto si ya está en el carrito */}
+            <button
+              className={`btn w-100 fw-semibold ${isInCart ? 'btn-secondary' : 'btn-polystation-cyan'}`}
               onClick={() => onAgregar(producto)}
+              disabled={isInCart}
             >
-              Agregar al Carrito
+              {isInCart ? 'En el Carrito' : 'Agregar al Carrito'}
             </button>
           </div>
         </div>
