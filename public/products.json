@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "nombre": "Grand Theft Auto VI PS5",
+    "categoria": "Juegos Físicos",
+    "marca": "PlayStation",
+    "precio": 99990,
+    "descripcion": "El esperado regreso a Vice City. Versión física para PS5 con disco incluido.",
+    "imagen": "Grand Theft Auto VI CON DISCO!!! PS5.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Consola PlayStation 5",
+    "categoria": "Consolas",
+    "marca": "PlayStation",
+    "precio": 749990,
+    "descripcion": "Consola de última generación con carga ultrarrápida y control DualSense.",
+    "imagen": "Consola Playstation 5.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Zelda Ocarina Of Time Remake",
+    "categoria": "Juegos Físicos",
+    "marca": "Nintendo",
+    "precio": 89990,
+    "descripcion": "El clásico atemporal remasterizado para la nueva generación de Nintendo Switch.",
+    "imagen": "zelda.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Consola Polystation ORIGINAL",
+    "categoria": "Consolas",
+    "marca": "Polystation",
+    "precio": 15000,
+    "descripcion": "La clásica consola retro con diseño legendario.",
+    "imagen": "Consola Polystation ORIGINAL.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Cartucho 9.999.999 en 1",
+    "categoria": "Juegos Físicos",
+    "marca": "Polystation",
+    "precio": 9990,
+    "descripcion": "Cartucho clásico para Polystation con millones de juegos (repetidos).",
+    "imagen": "Cartucho de 9.999.999 juegos en uno para Polystation.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Consola Nintendo Switch 2",
+    "categoria": "Consolas",
+    "marca": "Nintendo",
+    "precio": 649990,
+    "descripcion": "La esperada sucesora de la consola híbrida más popular del mundo.",
+    "imagen": "Consola Nintendo Switch 2.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Consola Xbox Series X",
+    "categoria": "Consolas",
+    "marca": "Xbox",
+    "precio": 699990,
+    "descripcion": "La consola más rápida y potente de la historia de Xbox, con 1TB de SSD.",
+    "imagen": "Consola Xbox Series X.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Grand Theft Auto VI Xbox Series X",
+    "categoria": "Juegos Físicos",
+    "marca": "Xbox",
+    "precio": 99990,
+    "descripcion": "Experimenta Vice City en 4K y 60FPS con tu consola Xbox Series X.",
+    "imagen": "Grand Theft Auto VI CON DISCO!!! Xbox Series X.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Consola Nintendo Switch",
+    "categoria": "Consolas",
+    "marca": "Nintendo",
+    "precio": 349990,
+    "descripcion": "La consola hibrida de Nintendo capaz de jugar de manera portatil o en tu televisor.",
+    "imagen": "Consola Nintendo Switch.jpg"
+  }
+]

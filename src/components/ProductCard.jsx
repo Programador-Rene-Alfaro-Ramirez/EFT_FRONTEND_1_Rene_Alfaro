@@ -1,53 +1,33 @@
 import React from 'react';
-import { formatearMoneda } from '../data/products';
 
-// Recibimos isInCart como prop
 export const ProductCard = ({ producto, onAgregar, isInCart }) => {
-  // Extraemos las propiedades del producto
-  const { nombre, precioNormal, precioOferta, enOferta, descripcion, imagen } = producto;
+  const formatearPrecio = (valor) => `$${valor.toLocaleString('es-CL')}`;
 
   return (
-    <div className="col-md-6 col-lg-6 mb-4">
-      <article className="card h-100 shadow-sm tarjeta-producto position-relative">
-        
-        {/* Renderizado condicional: Si está en oferta, mostramos un pequeño cartel */}
-        {enOferta && (
-          <span className="badge bg-danger position-absolute top-0 start-0 m-3 shadow-sm z-1">
-            OFERTA
-          </span>
-        )}
-
-        <img
-          src={imagen}
-          className="card-img-top p-3"
-          alt={nombre}
-          style={{ height: '210px', objectFit: 'contain', background: '#fff' }}
+    <div className="col">
+      <article className="card h-100 shadow-sm card-weplay">
+        <img 
+          src={producto.imagen} 
+          className="card-img-top p-3" 
+          alt={producto.nombre} 
+          style={{ height: '210px', objectFit: 'contain' }}
         />
-
         <div className="card-body d-flex flex-column text-center">
-          <h3 className="card-title h6 fw-bold mb-2 text-dark">{nombre}</h3>
-          <p className="card-text text-muted small flex-grow-1">{descripcion}</p>
+          <h5 className="card-title fw-bold text-dark mb-1">{producto.nombre}</h5>
+          <span className="badge bg-secondary mb-2 align-self-center">{producto.categoria}</span>
+          <p className="card-text text-muted small flex-grow-1">{producto.descripcion}</p>
           
-          <div className="mt-3">
-            {/* Renderizado condicional: Mostrar precio normal tachado si hay oferta */}
-            {enOferta && (
-              <span className="d-block text-decoration-line-through text-muted small mb-1">
-                Normal: {formatearMoneda(precioNormal)}
-              </span>
-            )}
-            <span className="d-block fs-5 fw-bold mb-3" style={{ color: 'var(--ps-cyan)' }}>
-              {enOferta ? formatearMoneda(precioOferta) : formatearMoneda(precioNormal)}
-            </span>
+          <h4 className="fw-bold mt-2" style={{ color: 'var(--weplay-cyan)' }}>
+            {formatearPrecio(producto.precio)}
+          </h4>
 
-            {/* Criterio 3 (Renderizado Condicional): Cambiar estilos y texto si ya está en el carrito */}
-            <button
-              className={`btn w-100 fw-semibold ${isInCart ? 'btn-secondary' : 'btn-polystation-cyan'}`}
-              onClick={() => onAgregar(producto)}
-              disabled={isInCart}
-            >
-              {isInCart ? 'En el Carrito' : 'Agregar al Carrito'}
-            </button>
-          </div>
+          <button 
+            className={`btn w-100 mt-3 fw-bold ${isInCart ? 'btn-secondary' : 'btn-weplay'}`}
+            onClick={() => onAgregar(producto)}
+            disabled={isInCart}
+          >
+            {isInCart ? 'En el Carrito' : 'Agregar al Carrito'}
+          </button>
         </div>
       </article>
     </div>

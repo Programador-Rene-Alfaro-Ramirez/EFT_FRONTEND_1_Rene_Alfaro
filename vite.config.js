@@ -1,10 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-plugins: [react()],
-  base: '/FRONTEND1_FORMATIVA5_Rene_Alfaro/', // Nombre exacto de tu repo
-build: {
-    outDir: 'docs' // Guardaremos la página web aquí
-}
+  plugins: [react()],
+  base: '/EFT_FRONT_END_I/',
 })
